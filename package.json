@@ -1,0 +1,28 @@
+{
+  "name": "pacman-game",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "start": "parcel build index.html && http-server dist",
+    "serve": "rm -rf .parcel-cache||true && parcel build index.html &&  node server.js",
+    "app": "npm run serve & npm run start",
+    "serve-local": "HOST=localhost rm -rf .parcel-cache||true && parcel build index.html &&  node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bad-words": "^3.0.4",
+    "express": "^4.17.1",
+    "http-server": "^0.11.1",
+    "parcel": "^2.9.3",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "cssnano": "^4.1.10",
+    "process": "^0.11.10"
+  }
+}
