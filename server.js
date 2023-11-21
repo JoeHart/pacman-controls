@@ -53,7 +53,7 @@ const playerIdToSocketIdMap = {}
 // io.attach(server);
 // console.log("starting websockets on port 3001");
 io.on("connection", function (socket) {
-  console.log("a user connected");
+  console.log("a user connected", socket.id);
   socket.on("disconnect", function (data) {
     console.log("user disconnected", socket.id);
 
@@ -90,6 +90,7 @@ io.on("connection", function (socket) {
     io.to(unitySocket).emit("up", { id });
   });
   socket.on("registerGame", function (data) {
+    console.log("REGISTER GAME", data);
     unitySocket = data.id;
   });
   socket.on("spawn", data => {
